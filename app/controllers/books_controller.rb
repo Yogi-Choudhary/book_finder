@@ -1,13 +1,13 @@
 class BooksController < ApplicationController
   
   def index
+    #binding.pry
+    @books = Book.all
     if params[:search].blank?
-      #redirect_to(index_path)
     else
-      @book = params[:search]
-      @book = Book("LIKE :search", search: @book)
+      @books = Book.where('title LIKE ?', '%' + params[:search] + '%')
+      #binding.pry
     end
-    #@books = Book.all
   end
   
   
