@@ -11,6 +11,22 @@
   </head>
 
   <body>
+    <table>
+      <thead>
+        <tr>
+          <% if user_signed_in? %>
+            <th><h2><%= link_to "Home", root_path %></h2></th>
+            <th><h2><%= link_to "View your profile", edit_user_registration_path  %></h2></th>
+            <th><h2><%= link_to 'Sign Out', destroy_user_session_path,
+                    method: :delete %></h2></th>
+          <% else %>
+            <th><h2><%= link_to 'Log in', new_user_session_path %></h2></th>
+            <th><h2> <%= link_to 'Sign up', new_user_registration_path, class: "nav-link" %></h2></th> 
+          <%end%>         
+        </tr>
+      </thead>
+    </table>
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
