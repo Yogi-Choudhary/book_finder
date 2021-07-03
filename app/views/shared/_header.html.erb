@@ -12,6 +12,17 @@
       <li class='nav-item text-justify'>
         <% if user_signed_in? %>
           <li>
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Action
+              </button>
+              <div class="dropdown-menu">
+                <%= link_to 'Add-New-Book', new_book_path, class:"dropdown-item" %>
+                <%#= link_to 'list-Book' , class:"dropdown-item" %>
+              </div>
+            </div>
+          </li>
+          <li>
           <%= link_to 'Home', root_path, class: 'nav-link text-white' %>
           </li>
            <li>

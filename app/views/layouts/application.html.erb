@@ -12,20 +12,16 @@
 
   <body>
     <%= render 'shared/header' %>
-    <% if flash[:notice] %>
-      <div class="notification is-primary global-notification">
+    <%# if flash[:notice] %>
+      <!-- <div class="notification is-primary global-notification">
         <p class="notice"><%= notice %></p>
-      </div>
-    <% end %>
+      </div> -->
+    <%#end %>
     <% if flash[:alert] %>
       <div class="notification is-danger global-notification">
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
-    
-  <!--  <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
- -->
     <%= yield %>
   </body>
 </html>

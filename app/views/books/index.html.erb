@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <div class="container">
   <div class="col-md-7 mx-md-auto mt-5">
     <div class="card shadow">
@@ -14,22 +16,48 @@
   </div>    
 </div>
 <br><br>  
+
+<div class="container">
+  <div class="col-md-7 mx-md-auto mt-5">
+    <div class="card shadow">
+      <div class="card-header">
+        <h1 class="card-title text-center">Books</h1>
+      </div>  
+    </div>
+  </div>
+</div>
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
       <th scope="col">Date</th>
+      <th scope="col">Isbn</th>
+      <th scope="col">Total pages</th>
+      <th scope="col">Show</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Destroy</th>
+
     </tr>
   </thead>
+
   <tbody>
     <% @books.each do |book| %>
-    <tr>
-      <!-- <th scope="row">1</th> -->
-      <td><%= book.title %></td>
-      <td><%= book.author %></td>
-      <td>@<%= book.date %></td>
-    </tr>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= book.date %></td>
+        <td><%= book.isbn %></td>
+        <td><%= book.total_pages %></td>
+        <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
-  </tbody>  
+  </tbody>
 </table>
+
+
+
+<%#= link_to 'New Book', new_book_path %>
