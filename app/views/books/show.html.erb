@@ -33,7 +33,13 @@
             <strong>Total pages:</strong>
             <%= @book.total_pages %>
           </p>
-        </div>  
+        </div> 
+        <div class="form-group">
+          <p class="card-title text-center">
+            <strong>Image:</strong>
+            <%= image_tag(@book.image, style:'width:100%') %>
+          </p>
+        </div> 
         <div class="form-group">
           <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary btn-lg btn-block' %> <br>
           <%= link_to 'Back', books_path, class: 'btn btn-primary btn-lg btn-block' %>

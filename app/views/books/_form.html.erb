@@ -39,6 +39,10 @@
     <%#= form.label :total_pages %>
     <%= form.number_field :user_id, id: :book_user_id, class: 'form-control form', value: current_user.id, type: :hidden %>
   </div>
+  <div class="form-group">
+    <%= form.label :image %>
+    <%= form.file_field :image %> 
+  </div>  
 
   <div class="form-group">
     <%= form.submit class: 'btn btn-primary btn-lg btn-block' %>
