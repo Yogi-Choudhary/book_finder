@@ -1,9 +1,9 @@
 <%= form_with(model: book) do |form| %>
   <% if book.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert alert-danger">
       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
-      <ul>
+      <ul class="alert alert alert-danger">
         <% book.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -25,6 +25,10 @@
     <%= form.label :date %>
     <%= form.date_select :date, class: 'form-control form-control-lg' %>
   </div>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control form-control-lg'%>
+  </div>
 
   <div class="form-group">
     <%= form.label :isbn %>
@@ -33,16 +37,33 @@
 
   <div class="form-group">
     <%= form.label :total_pages %>
-    <%= form.number_field :total_pages, class: 'form-control form-control-lg' %>
+    <%= form.number_field :total_pages, 
+                          class: 'form-control form-control-lg' %>
   </div>
+  <div class="form-group">
+    <%= form.label :price %>
+    <%= form.number_field :price, class: 'form-control form-control-lg' %> 
+  </div>
+  <div class="form-group">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: 'form-control form-control-lg' %> 
+  </div>
+  <div class="form-group">
+    <%= form.label :preview_pdf %>
+    <%= form.file_field :preview_pdf,direct_upload: true, 
+                         accept: 'application/pdf' ,
+                         class: 'form-control form-control-lg' %> 
+  </div>
+  <div class="form-group">
+    <%= form.label :pdf_file %>
+    <%= form.file_field :pdf_file ,direct_upload: true, 
+                         accept: 'application/pdf',
+                         class: 'form-control form-control-lg' %> 
+  </div>  
   <div class="form-group">
     <%#= form.label :total_pages %>
     <%= form.number_field :user_id, id: :book_user_id, class: 'form-control form', value: current_user.id, type: :hidden %>
   </div>
-  <div class="form-group">
-    <%= form.label :image %>
-    <%= form.file_field :image %> 
-  </div>  
 
   <div class="form-group">
     <%= form.submit class: 'btn btn-primary btn-lg btn-block' %>

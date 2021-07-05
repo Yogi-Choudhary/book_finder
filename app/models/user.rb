@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :books
 
-  has_many :pictures, as: :imageable
+  has_many :poly_images, as: :imageable
+  has_one_attached :image
   
 end

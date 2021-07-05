@@ -4,6 +4,12 @@
       <div class="card-body">  
         <div class="form-group">
           <p class="card-title text-center">
+            <strong>Image:</strong>
+            <%= image_tag(@book.image, style:'width:100%') %>
+          </p>
+        </div>
+        <div class="form-group">
+          <p class="card-title text-center">
             <strong>Title:</strong>
             <%= @book.title %>
           </p>
@@ -41,28 +47,27 @@
         </div> 
         <div class="form-group">
           <p class="card-title text-center">
-            <strong>Image:</strong>
-            <%= image_tag(@book.image, style:'width:100%') %>
-          </p>
-        </div>
-        <div class="form-group">
-          <p class="card-title text-center">
             <strong>Preview-Pdf:</strong>
+            <%#= link_to 'preview_pdf', "javascript:void(0)", class:'btn btn-primary'%>
             <%= @book.preview_pdf %>
           </p>
         </div>  
         <div class="form-group">
           <p class="card-title text-center">
             <strong>pdf:</strong>
+            <%#= link_to 'pdf', "javascript:void(0)", class:'btn btn-primary'%>
             <%= @book.pdf_file %>
           </p>
         </div>
-        <%#= link_to "My document", @book.pdf_file.url, target: "_blank" %>
-        <div class="form-group">
-          <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary btn-lg btn-block' %> <br>
-          <%= link_to 'Back', books_path, class: 'btn btn-primary btn-lg btn-block' %>
-        </div>
 
+        <div class="form-group">
+          <p class="card-title text-center">
+            <%= link_to 'preview_pdf', "javascript:void(0)", class:'btn btn-primary'%>|
+            <%= link_to 'pdf', "javascript:void(0)", class:'btn btn-primary'%>
+          </p>
+          
+        </div>
+       
       <div class="card-body"> 
     </div>
   </div>
