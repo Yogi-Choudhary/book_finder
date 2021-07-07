@@ -2,6 +2,11 @@ class HomeController < ApplicationController
   before_action :set_book, only: %i[show]
   def index
     @books = Book.all
+    if params[:search].blank?
+    else
+      @books = Book.where('title LIKE ? or category LIKE ?','%' + params[:search] + '%',
+                                                            '%' + params[:search] + '%')
+      end
   end
 
 

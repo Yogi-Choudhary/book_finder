@@ -14,6 +14,18 @@
             <%= @book.title %>
           </p>
         </div>
+        <div class="form-group">
+          <p class="card-title text-center">
+            <strong>Category:</strong>
+            <%= @book.category %>
+          </p>
+        </div>
+        <div class="form-group">
+          <p class="card-title text-center">
+            <strong>Language:</strong>
+            <%= @book.language %>
+          </p>
+        </div>
 
         <div class="form-group">
           <p class="card-title text-center">
@@ -66,6 +78,11 @@
             <%= link_to 'pdf', "javascript:void(0)", class:'btn btn-primary'%>
           </p>
           
+        </div>
+        <div class="form-group">
+          <p class="card-title text-center">
+            <%= link_to 'dgdsg', root_path, class:'btn btn-primary' %>
+          </p>
         </div>
        
       <div class="card-body"> 

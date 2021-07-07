@@ -29,6 +29,8 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Title</th>
+      <th scope="col">Category</th>
+      <th scope="col">Language</th>
       <th scope="col">Author</th>
       <th scope="col">Date</th>
       <th scope="col">Isbn</th>
@@ -44,6 +46,8 @@
     <% @books.each do |book| %>
       <tr>
         <td><%= book.title %></td>
+        <td><%= book.category%></td>
+        <td><%= book.language%></td>
         <td><%= book.author %></td>
         <td><%= book.date %></td>
         <td><%= book.isbn %></td>
