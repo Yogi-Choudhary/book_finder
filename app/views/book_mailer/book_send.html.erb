@@ -1,0 +1,8 @@
+<h2>Hi User</h2>
+
+<p><strong>Name: </strong><%= @book.title %></p>
+<p><strong>Author: </strong><%= @book.author %></p>
+<p><strong>ISBN Number: </strong><%= @book.isbn %></p>
+<p><strong>Description: </strong><%= @book.description %></p>
+<br><br>
+<%= link_to 'Download', @book.pdf_file, download: ' '%>

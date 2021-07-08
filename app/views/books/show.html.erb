@@ -59,14 +59,15 @@
         </div> 
         <div class="form-group">
           <p class="card-title text-center">
-            <strong>Preview-Pdf:</strong>
-            <%= @book.preview_pdf %>
+            <!-- <strong>Preview-Pdf:</strong> -->
+            <%= link_to 'Preview_PDF', @book.preview_pdf, class:'btn btn-primary' %>
           </p>
-        </div>  
+        </div>    
+
         <div class="form-group">
           <p class="card-title text-center">
-            <strong>pdf:</strong>
-            <%= @book.pdf_file %>
+            <!-- <strong>pdf:</strong> -->
+            <%= link_to 'PDF', @book.pdf_file, class:'btn btn-primary' %>
           </p>
         </div>
         <%#= link_to "My document", @book.pdf_file.url, target: "_blank" %>

@@ -58,6 +58,13 @@ class BooksController < ApplicationController
     end
   end
 
+  def send_book_mail
+    @book = Book.find(params[:id])
+    BookMailer.book_send(@book).deliver_now
+    flash[:notice] = "book has been sent."
+    redirect_to root_path(@book.id)
+  end
+
   private
     
     def set_book
