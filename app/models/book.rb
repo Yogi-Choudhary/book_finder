@@ -7,5 +7,6 @@ class Book < ApplicationRecord
   has_one_attached :image
   has_one_attached :preview_pdf
   has_one_attached :pdf_file 
-
+  
+  has_many :order_items, as: :orderable
 end

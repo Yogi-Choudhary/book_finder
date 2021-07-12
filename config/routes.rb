@@ -1,4 +1,7 @@
   Rails.application.routes.draw do
+  get 'orders/new'
+  resources :order_items
+  get 'cart', to: 'cart#show'
   root 'home#index'
   resources :books
   resources :home 
