@@ -62,6 +62,7 @@
             <%= link_to 'Preview_PDF', @book.preview_pdf %>|------|
             
             <%= link_to 'PDF_File', :controller => 'books', :action => 'send_book_mail', :id => @book.id %>
+            <%= link_to 'PDF', orders_new_path(book_id: @book.id), class:'btn btn-primary'%>
           </p>
           
         </div>
